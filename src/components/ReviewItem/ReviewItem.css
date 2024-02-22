@@ -1,0 +1,12 @@
+.review-item{
+    width: 500px;
+    border: 2px solid gainsboro;
+    margin-bottom: 20px;
+    padding: 8px;
+    height: 107px;
+}
+.review-item img{
+    width: 91px;
+    height: 91px;
+    
+}
