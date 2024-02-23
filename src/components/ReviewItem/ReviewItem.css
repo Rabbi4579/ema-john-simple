@@ -41,3 +41,8 @@
     align-items: center;
     margin-right: 10px;
 }
+
+.delete-icon{
+    color: #EB5757;
+    font-size: 27px;
+}
