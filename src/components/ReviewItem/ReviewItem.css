@@ -4,9 +4,40 @@
     margin-bottom: 20px;
     padding: 8px;
     height: 107px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    
 }
 .review-item img{
     width: 91px;
     height: 91px;
+    border-radius: 8px;
     
+}
+.review-details{
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.review-title{
+    font-size: 21px;
+    font-weight: 400;
+}
+.review-details p{
+    margin: 0;
+    margin-bottom: 3px;
+}
+.orange-text{
+    color: orange;
+}
+
+.btn-delete{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: rgba(235, 87, 87, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }
