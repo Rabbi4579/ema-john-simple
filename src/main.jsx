@@ -11,6 +11,7 @@ import Login from './components/Login/Login.jsx'
 import cartProductsLoader from './Loaders/cartProductsLoaders.js'
 import SignUp from './components/SignUp/SignUp.jsx'
 import AuthProvider from './components/Providers/AuthProvider.jsx'
+import Procced from './components/Procced/Procced.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: 'procced',
+        element: <Procced></Procced>
       },
       {
         path: '/register',

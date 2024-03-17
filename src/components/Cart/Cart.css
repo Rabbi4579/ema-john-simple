@@ -1,11 +1,11 @@
-.cart{
+.cart {
     background-color: rgba(255, 153, 0, 0.3);
     padding: 20px;
     position: sticky;
     top: 0;
 }
 
-.btn-clear-cart{
+.btn-clear-cart {
     width: 90%;
     margin: 10px auto;
     background-color: #FF3030;
@@ -14,5 +14,18 @@
     justify-content: space-between;
     align-items: center;
     height: 48px;
+    font-size: 21px;
+}
+
+.btn-review-cart {
+    width: 90%;
+    border-radius: 4px;
+    background: rgb(255, 153, 0);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 17px;
+    text-decoration: none;
     font-size: 21px;
 }

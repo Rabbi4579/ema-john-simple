@@ -4,10 +4,12 @@ import logo from '../../images/Logo.svg';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    const handleLogOut = () =>{
-        
+    const handleLogOut = () => {
+        logOut()
+            .then(result => { })
+            .catch(error => console.log(error))
     }
     return (
         <nav className='header'>
@@ -20,7 +22,7 @@ const Header = () => {
                 <Link to='/register'>Register</Link>
 
                 {
-                    user && <span>{user.email} <button onClick={handleLogOut}>Sign Out</button></span>
+                    user && <span className='user-text'>{user.email}<button onClick={handleLogOut}>Sign Out</button></span>
                 }
             </div>
         </nav>
