@@ -1,11 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 const Login = () => {
-
+    const [show, setShow] = useState(false)
 
     const {signIn} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log(location)
+
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLogin = (event) =>{
         event.preventDefault()
@@ -14,13 +20,14 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password)
 
-
+        
 
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
-            form.reset()
+            form.reset();
+            navigate(from)
         })
         .catch(error => {
             console.log(error)
@@ -37,10 +44,18 @@ const Login = () => {
                 </div>
                 <div className="form-control">
                     <label htmlFor="">Password</label>
-                    <input type="password" name="password" id="password" required />
+                    <input type={show ? 'text': 'password'} name="password" id="password" required />
                 </div>
+                <p onClick={() => setShow(!show)}>
+                    <small>
+                        {
+                            show? <span>Hide password</span> : <span>Show password</span>
+                        }
+                    </small>
+                </p>
                 <input className='submit-btn' type="submit" value="login" />
                 <small><p className='new-ema'>New to Ema-john? <Link to='/register'><span className='text-color'> Create New Account</span></Link></p>  </small>
+
             </form>
         </div>
     );
